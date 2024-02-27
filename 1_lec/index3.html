@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let count = 0;
+
+      // const upCount = () => {
+      //     let params = 3;
+      //     return count + params;
+      // }
+
+      // console.log(upCount(5));
+      // console.log(params);
+
+      //пример из видео
+
+      const createCounter = () => {
+        let counter = 0;
+        return () => {
+          return ++counter;
+        };
+      };
+     
+
+
+      // Создаем счетчик.
+      const counter1 = createCounter();
+      console.log(counter1());
+      console.log(counter1());
+    //   counter1(); // 1
+    //   counter1(); // 2
+      //Создадим еще один счетчик. Каждый будет работать независимо.
+      const counter2 = createCounter();
+      console.log(counter2());
+      console.log(counter1());
+      counter2(); // 1
+      counter1(); // 3
+    </script>
+  </body>
+</html>

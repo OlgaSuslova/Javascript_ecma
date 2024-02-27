@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="add">Add</button>
+    <button id="subtract">Subtract</button>
+
+    <script>
+      function createCalculator(initialValue) {
+        let value = initialValue;
+
+        return {
+          add: function (num) {
+            value += num;
+            console.log(value);
+          },
+          subtract: function (num) {
+            value -= num;
+            console.log(value);
+          },
+          getValue: function () {
+            return value;
+          },
+        };
+      }
+
+      let calculator = createCalculator(10);
+
+      document.getElementById("add").addEventListener("click", function () {
+        calculator.add(5);
+      });
+
+      document
+        .getElementById("subtract")
+        .addEventListener("click", function () {
+          calculator.subtract(3);
+        });
+    </script>
+  </body>
+</html>

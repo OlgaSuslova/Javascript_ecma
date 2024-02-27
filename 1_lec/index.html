@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    
+    const array = [1, 3, 5, 33, 15 ];
+
+        function max (param1, param2, ...rest) {
+            if (param1 > param2) {
+                console.log(param1); 
+            } else {
+                console.log(param2); 
+            } 
+
+            console.log(rest);
+        }
+        
+
+        // console.log(max(3, 3));
+        console.log(max(...array));
+        // console.log(Math.max(...array));
+
+// Spread (от английского расширить) - оператор расширения, или по другому
+// распространения данных из массива в атомарные элементы. Т.е. мы можем
+// взять массив, и вытащить все его элементы как отдельные переменные
+
+// Rest оператор (от английского остальные, оставшиеся) - позволяет собрать
+// оставшиеся аргументы функции в массив. Звучит немного странно, но этот
+// оператор позволяет не перечислять все аргументы функции, как отдельные
+// переменные, а получить их скопом в один массив. 
+
+
+
+
+    </script>
+</body>
+</html>
