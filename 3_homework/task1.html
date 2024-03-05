@@ -31,18 +31,15 @@
                 super(name);
                 this.departament = departament;
             }
-
             displayInfo() {
                 console.log(`Сотрудник: ${this.name}, Департамент: ${this.departament}`);
             }
-
         }
 
         const employee = new Employee("John Smith");
         employee.displayInfo();
         const manager = new Manager("Jane Doe", "Sales");
         manager.displayInfo();
-
     </script>
 </body>
 </html>
