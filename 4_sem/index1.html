@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Создайте функцию delayedMessage(message, delay), которая принимает аргументы message (строка) и delay (число). Функция должна выводить заданное сообщение в консоль через указанную задержку.
+        // Вызовите функцию delayedMessage() три раза с разными сообщениями и задержками. Например:
+        // delayedMessage("Сообщение 1", 2000)
+        // delayedMessage("Сообщение 2", 1000)
+        // delayedMessage("Сообщение 3", 3000)
+        // После вызова всех функций delayedMessage(), добавьте сообщение вида "Конец программы" с помощью console.log().
+
+        function delayedMessage (message, delay) {
+            setTimeout(() => {console.log(message)} , delay)
+        
+            
+        }
+
+        delayedMessage("Сообщение 1", 2000)
+        delayedMessage("Сообщение 2", 1000)
+        delayedMessage("Сообщение 3", 3000)
+        delayedMessage("Конец программы", 4000)
+
+    </script>
+</body>
+</html>

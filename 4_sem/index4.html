@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .content {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+      }
+      .user {
+        width: 250px;
+        height: 100px;
+        border: 1px solid gray;
+        text-align: center;
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content"></div>
+    <script>
+      // Разработайте простой веб-интерфейс для отображения списка пользователей, получаемого с сервера. Вам необходимо отобразить имена пользователей и их email-адреса.
+      // Используйте функцию fetch для отправки GET-запроса к https://jsonplaceholder.typicode.com/users . Этот запрос вернет JSON-массив объектов пользователей.
+      // В обработчике .then() преобразуйте полученный ответ в JSON.
+      // После успешного получения и преобразования ответа в JSON, отобразите на странице список пользователей. Для каждого пользователя покажите его имя и email. Для отображения можно использовать любой HTML-элемент, например, ul для списка и li для элементов списка.
+      // Добавьте базовую обработку ошибок, чтобы в случае неудачного запроса на странице отображалось сообщение об ошибке.
+
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          data.forEach((element) => {
+            const contentEl = document.querySelector(".content");
+            const cardEl = document.createElement("div");
+            cardEl.className = "user";
+            cardEl.innerHTML = `<p class='name'> ${element.name} </p> <p class='email'>${element.email}</p>`;
+            contentEl.append(cardEl);
+          });
+        })
+        .catch((err) => {
+          console.error("error", err);
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+//       fetch("https://jsonplaceholder.typicode.com/users")
+//         .then((response) => {
+//           if (!response.ok) {
+//             throw new Error("Network response was not ok");
+//           }
+//           return response.json();
+//         })
+//         .then((users) => {
+//           // Сортировка пользователей по имени в алфавитном порядке
+//           users.sort((a, b) => a.name.localeCompare(b.name));
+
+//           const userList = document.getElementById("userList");
+//           users.forEach((user) => {
+//             const card = document.createElement("div");
+//             card.className = "col-md-4";
+//             // Не секьюрно
+//             card.innerHTML = `
+// <div class="card">
+// <div class="card-body">
+// <h5 class="card-title">${user.name}</h5>
+// <p class="card-text">${user.email}</p>
+// <p class="card-text"><i class="fas fa-phone"></i> ${user.phone}</p>
+// <p class="card-text"><i class="fas fa-globe"> ${user.website}</i></p>
+// </div>
+// </div>
+// `;
+//             userList.appendChild(card);
+//           });
+//         })
+//         .catch((error) => {
+//           console.error(
+//             "There has been a problem with your fetch operation:",
+//             error
+//           );
+//           const userList = document.getElementById("userList");
+//           userList.textContent =
+//             "Failed to fetch users. Please try again later.";
+//         });
+    </script>
+  </body>
+</html>

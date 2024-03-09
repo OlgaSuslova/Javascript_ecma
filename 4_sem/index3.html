@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Напишите программу, которая загружает данные с сервера с использованием функции fetch. Ваша задача — использовать предложенный шаблон запроса для получения данных и их обработки.
+
+      // Создайте функцию, которая отправляет запрос к серверу, используя fetch. Адрес сервера для запроса: https://api.randomdatatools.ru/?count=5 .
+      // В функции реализуйте обработку промиса, возвращаемого fetch. Используйте метод .then() для обработки ответа сервера.
+      // Проверьте свойство response.ok.
+      // Добавьте обработку ошибок с помощью метода .catch(). Выведите сообщение об ошибке в консоль, если в процессе выполнения запроса или обработки данных возникли проблемы.
+
+      fetch("https://api.randomdatatools.ru/?count=5")
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+            data.forEach((element) => {console.log(element)})
+        })
+        .catch((err) => {
+            console.error('error');
+        });
+        
+
+    //   function getDataFromServer(url) {
+    //     fetch(url)
+    //       .then((response) => {
+    //         return response.json();
+    //       })
+    //       .then((data) => {
+    //         data.products.forEach((element) => {
+    //           console.log(element.title);
+    //         });
+    //       })
+    //       .catch((error) => {
+    //         console.error("error");
+    //       });
+    //   }
+
+    //   getDataFromServer("https://dummyjson.com/products");
+    </script>
+  </body>
+</html>
